@@ -1,11 +1,5 @@
-Wednesday 22th septembre :
-
-- application des connaissances sur Git et Github
-- début création de script
-
-Début du projet 0x00.Shell, basics
+Wednesday 22th september 2021 :
+- application Git et Github sur un nouveau projet
+- premier script
 
 GO !
-
-Tentative 2 d'ajouter README.md to Github.
-Tentative 3 d'ajouter README.md to Github.
