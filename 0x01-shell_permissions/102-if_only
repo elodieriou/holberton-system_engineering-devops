@@ -1,2 +1,2 @@
 #!/bin/bash
-chmon --from=guillaume vincent: hello
+chmon --from=guillaume vincent hello
