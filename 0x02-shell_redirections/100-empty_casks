@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./* -type fd -empty | sort | ls -a | cat
+find ./* -type fd -empty | sort | ls -1a
