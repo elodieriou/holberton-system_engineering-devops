@@ -1,12 +1,10 @@
 <p align="center">
-    <img width="50%" height="200" src="https://getlogovector.com/wp-content/uploads/2020/11/holberto\
-n-school-logo-vector.png"
+    <img width="50%" height="200" src="https://getlogovector.com/wp-content/uploads/2020/11/holberton-school-logo-vector.png"
 </p>
 
 # Project holberton-system_engineering-devops :woman_student:
 
-This repository contains files written for Vagrant and Git. It is my first project at Holberton Scho\
-ol and more precisely at Holberton School Laval. 
+This repository contains files written for Vagrant and Git. It is my first project at Holberton School and more precisely at Holberton School Laval. 
 
 The list of projects contained follows :
 
