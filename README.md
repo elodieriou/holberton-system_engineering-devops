@@ -4,7 +4,7 @@
 
 # Project holberton-system_engineering-devops :woman_student:
 
-This repository contains files written for Vagrant and Git. It is my first project at Holberton School and more precisely at Holberton School Laval. 
+This repository contains files written for Shell. It is my first project at Holberton School and more precisely at Holberton School Laval. 
 
 The list of projects contained follows :
 
