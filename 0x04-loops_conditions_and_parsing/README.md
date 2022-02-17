@@ -3,6 +3,10 @@
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
+<p align="center">
+   <img width="50%" height="200" src="https://datascientest.com/wp-content/uploads/2021/03/illu_devops_blog-119-1200x900.png">
+</p>
+
 ### General
 
     How to create SSH keys
