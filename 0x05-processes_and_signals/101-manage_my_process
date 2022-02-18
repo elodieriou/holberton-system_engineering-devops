@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# This bash init script manages the file "manage_my_process" (not necessary the step 'touch' for create a file, use 'echo')
+function start_process()
+{
+  ./manage_my_process &
+  sudo echo "$!" > /var/run/my_process.pid
+  echo "manage_my_process started"
+}
+function stop_process()
+{
+  echo "manage_my_process stopped"
+  pkill -f /var/run/my_process.pid
+  sudo rm /var/run/my_process.pid
+}
+function restart_process()
+{
+  pkill -f /var/run/my_process.pid
+  sudo rm /var/run/my_process.pid
+  ./manage_my_process &
+  sudo echo "$!" > /var/run/my_process.pid
+  echo "manage_my_process restarted"
+}
+case "$1" in
+  start)
+    start_process
+    ;;
+  stop)
+    stop_process
+    ;;
+  restart)
+    restart_process
+    ;;
+  *)
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit
+    ;;
+esac
