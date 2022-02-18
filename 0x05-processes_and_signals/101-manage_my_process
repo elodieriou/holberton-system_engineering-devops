@@ -2,20 +2,22 @@
 # This bash init script manages the file "manage_my_process" (not necessary the step 'touch' for create a file, use 'echo')
 function start_process()
 {
+  sudo chmod u+x manage_my_process
   ./manage_my_process &
   echo $! > /var/run/my_process.pid
   echo "manage_my_process started"
 }
 function stop_process()
 {
-  pkill -f ./manage_my_process
+  pkill -f /manage_my_process
   rm /var/run/my_process.pid
   echo "manage_my_process stopped"
 }
 function restart_process()
 {
-  pkill -f ./manage_my_process
+  pkill -f /manage_my_process
   rm /var/run/my_process.pid
+  sudo chmod u+x manage_my_process
   ./manage_my_process &
   echo $! > /var/run/my_process.pid
   echo "manage_my_process restarted"
