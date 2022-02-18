@@ -3,21 +3,21 @@
 function start_process()
 {
   ./manage_my_process &
-  sudo echo "$!" > /var/run/my_process.pid
+  echo $! > /var/run/my_process.pid
   echo "manage_my_process started"
 }
 function stop_process()
 {
   echo "manage_my_process stopped"
   pkill -f /var/run/my_process.pid
-  sudo rm /var/run/my_process.pid
+  rm /var/run/my_process.pid
 }
 function restart_process()
 {
   pkill -f /var/run/my_process.pid
-  sudo rm /var/run/my_process.pid
+  rm /var/run/my_process.pid
   ./manage_my_process &
-  sudo echo "$!" > /var/run/my_process.pid
+  echo $! > /var/run/my_process.pid
   echo "manage_my_process restarted"
 }
 case "$1" in
@@ -32,6 +32,5 @@ case "$1" in
     ;;
   *)
     echo "Usage: manage_my_process {start|stop|restart}"
-    exit
     ;;
 esac
