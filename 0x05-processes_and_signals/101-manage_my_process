@@ -9,12 +9,12 @@ function start_process()
 function stop_process()
 {
   echo "manage_my_process stopped"
-  pkill -f /var/run/my_process.pid
+  pkill -f /manage_my_process
   rm /var/run/my_process.pid
 }
 function restart_process()
 {
-  pkill -f /var/run/my_process.pid
+  pkill -f /manage_my_process
   rm /var/run/my_process.pid
   ./manage_my_process &
   echo $! > /var/run/my_process.pid
