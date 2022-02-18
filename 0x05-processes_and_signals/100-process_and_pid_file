@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script
+sudo touch /var/run/myscript.pid
+sudo bash -c "echo $BASHPID > /var/run/myscript.pid"
+function exit_process()
+{
+  echo "I hate the kill command"
+  sudo bash -c "rm -f /var/run/myscript.pid"
+  exit
+}
+trap "echo Y U no love me?!" SIGINT
+trap exit_process SIGTERM
+until false; do
+  echo "To infinity and beyond"
+  sleep 2
+done
