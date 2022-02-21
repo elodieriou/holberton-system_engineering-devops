@@ -1,6 +1,6 @@
 # 0x05. Processes and signals
 
-Learning Objectives
+## Learning Objectives
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 General
@@ -12,25 +12,16 @@ General
     What is a signal
     What are the 2 signals that cannot be ignored
 
-Tasks
-0. What is my PID
-mandatory
-
+## Tasks (mandatory)
+### 0.What is my PID
 Write a Bash script that displays its own PID.
-
+```commandline
 sylvain@ubuntu$ ./0-what-is-my-pid
 4120
 sylvain@ubuntu$
+```
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 0-what-is-my-pid
-
-1. List your processes
-mandatory
-
+### 1. List your processes
 Write a Bash script that displays a list of currently running processes.
 
 Requirements:
@@ -38,7 +29,7 @@ Requirements:
     Must show all processes, for all users, including those which might not have a TTY
     Display in a user-oriented format
     Show process hierarchy
-
+```commandline
 sylvain@ubuntu$ ./1-list_your_processes | head -50
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         2  0.0  0.0      0     0 ?        S    Feb13   0:00 [kthreadd]
@@ -91,46 +82,32 @@ root       378  0.0  0.2  49904  1088 ?        Ss   Feb13   0:00 /lib/systemd/sy
 root       518  0.0  0.1  23416   644 ?        Ss   Feb13   0:00 rpcbind
 statd      547  0.0  0.1  21536   852 ?        Ss   Feb13   0:00 rpc.statd -L
 sylvain@ubuntu$
+```
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 1-list_your_processes
-
-2. Show your Bash PID
-mandatory
-
+### 2. Show your Bash PID
 Using your previous exercise command, write a Bash script that displays lines containing the bash word, thus allowing you to easily get the PID of your Bash process.
 
 Requirements:
 
     You cannot use pgrep
     The third line of your script must be # shellcheck disable=SC2009 (for more info about ignoring shellcheck error here)
-
+```commandline
 sylvain@ubuntu$ sylvain@ubuntu$ ./2-show_your_bash_pid
 sylvain   4404  0.0  0.7  21432  4000 pts/0    Ss   03:32   0:00          \_ -bash
 sylvain   4477  0.0  0.2  11120  1352 pts/0    S+   03:40   0:00              \_ bash ./2-show_your_bash_PID
 sylvain   4479  0.0  0.1  10460   912 pts/0    S+   03:40   0:00                  \_ grep bash
 sylvain@ubuntu$ 
-
+```
 Here we can see that my Bash PID is 4404.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 2-show_your_bash_pid
-
-3. Show your Bash PID made easy
-mandatory
+### 3. Show your Bash PID made easy
 
 Write a Bash script that displays the PID, along with the process name, of processes whose name contain the word bash.
 
 Requirements:
 
     You cannot use ps
-
+```commandline
 sylvain@ubuntu$ ./3-show_your_bash_pid_made_easy
 4404 bash
 4555 bash
@@ -138,27 +115,15 @@ sylvain@ubuntu$ ./3-show_your_bash_pid_made_easy
 4404 bash
 4557 bash
 sylvain@ubuntu$ 
+```
 
-Here we can see that:
-
-    For the first iteration: bash PID is 4404 and that the 3-show_your_bash_pid_made_easy script PID is 4555
-    For the second iteration: bash PID is 4404 and that the 3-show_your_bash_pid_made_easy script PID is 4557
-
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 3-show_your_bash_pid_made_easy
-
-4. To infinity and beyond
-mandatory
-
+### 4. To infinity and beyond
 Write a Bash script that displays To infinity and beyond indefinitely.
 
 Requirements:
 
     In between each iteration of the loop, add a sleep 2
-
+```commandline
 sylvain@ubuntu$ ./4-to_infinity_and_beyond
 To infinity and beyond
 To infinity and beyond
@@ -167,18 +132,10 @@ To infinity and beyond
 To infinity and beyond
 ^C
 sylvain@ubuntu$ 
-
+```
 Note that I ctrl+c (killed) the Bash script in the example.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 4-to_infinity_and_beyond
-
-5. Don't stop me now!
-mandatory
-
+### 5. Don't stop me now!
 We stopped our 4-to_infinity_and_beyond process using ctrl+c in the previous task, there is actually another way to do this.
 
 Write a Bash script that stops 4-to_infinity_and_beyond process.
@@ -188,7 +145,7 @@ Requirements:
     You must use kill
 
 Terminal #0
-
+```commandline
 sylvain@ubuntu$ ./4-to_infinity_and_beyond
 To infinity and beyond
 To infinity and beyond
@@ -206,22 +163,16 @@ To infinity and beyond
 To infinity and beyond
 Terminated
 sylvain@ubuntu$ 
+```
 
 Terminal #1
-
+```commandline
 sylvain@ubuntu$ ./5-dont_stop_me_now 
 sylvain@ubuntu$ 
-
+```
 I opened 2 terminals in this example, started by running my 4-to_infinity_and_beyond Bash script in terminal #0 and then moved on terminal #1 to run 5-dont_stop_me_now. We can then see in terminal #0 that my process has been terminated.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 5-dont_stop_me_now
-
-6. Stop me if you can
-mandatory
+### 6. Stop me if you can
 
 Write a Bash script that stops 4-to_infinity_and_beyond process.
 
@@ -230,7 +181,7 @@ Requirements:
     You cannot use kill or killall
 
 Terminal #0
-
+```commandline
 sylvain@ubuntu$ ./4-to_infinity_and_beyond
 To infinity and beyond
 To infinity and beyond
@@ -245,22 +196,16 @@ To infinity and beyond
 To infinity and beyond
 Terminated
 sylvain@ubuntu$ 
+```
 
 Terminal #1
-
+```commandline
 sylvain@ubuntu$ ./6-stop_me_if_you_can
 sylvain@ubuntu$ 
-
+```
 I opened 2 terminals in this example, started by running my 4-to_infinity_and_beyond Bash script in terminal #0 and then moved on terminal #1 to run 6-stop_me_if_you_can. We can then see in terminal #0 that my process has been terminated.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 6-stop_me_if_you_can
-
-7. Highlander
-mandatory
+### 7. Highlander
 
 Write a Bash script that displays:
 
@@ -271,7 +216,7 @@ Write a Bash script that displays:
 Make a copy of your 6-stop_me_if_you_can script, name it 67-stop_me_if_you_can, that kills the 7-highlander process instead of the 4-to_infinity_and_beyond one.
 
 Terminal #0
-
+```commandline
 sylvain@ubuntu$ ./7-highlander
 To infinity and beyond
 To infinity and beyond
@@ -284,30 +229,23 @@ To infinity and beyond
 I am invincible!!!
 To infinity and beyond
 ^C
-sylvain@ubuntu$ 
-
+sylvain@ubuntu$
+```
 Terminal #1
-
+```commandline
 sylvain@ubuntu$ ./67-stop_me_if_you_can 
 sylvain@ubuntu$ ./67-stop_me_if_you_can
 sylvain@ubuntu$ ./67-stop_me_if_you_can
 sylvain@ubuntu$ 
-
+```
 I started 7-highlander in Terminal #0 and then run 67-stop_me_if_you_can in terminal #1, for every iteration we can see I am invincible!!! appearing in terminal #0.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 7-highlander
-
-8. Beheaded process
-mandatory
+### 8. Beheaded process
 
 Write a Bash script that kills the process 7-highlander.
 
 Terminal #0
-
+```commandline
 sylvain@ubuntu$ ./7-highlander 
 To infinity and beyond
 To infinity and beyond
@@ -315,22 +253,16 @@ To infinity and beyond
 To infinity and beyond
 Killed
 sylvain@ubuntu$ 
-
+```
 Terminal #1
-
+```commandline
 sylvain@ubuntu$ ./8-beheaded_process
 sylvain@ubuntu$ 
-
+```
 I started 7-highlander in Terminal #0 and then run 8-beheaded_process in terminal #1 and we can see that the 7-highlander has been killed.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 8-beheaded_process
-
-9. Process and PID file
-#advanced
+## Tasks #advanced
+### 9. Process and PID file
 
 Write a Bash script that:
 
@@ -339,16 +271,17 @@ Write a Bash script that:
     Displays I hate the kill command when receiving a SIGTERM signal
     Displays Y U no love me?! when receiving a SIGINT signal
     Deletes the file /var/run/my.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
-
+```commandline
 sylvain@ubuntu$ sudo ./100-process_and_pid_file
 To infinity and beyond
 To infinity and beyond
 ^CY U no love me?!
+```
 
 Executing the 100-process_and_pid_file script and killing it with ctrl+c.
 
 Terminal #0
-
+```commandline
 sylvain@ubuntu$ sudo ./100-process_and_pid_file
 To infinity and beyond
 To infinity and beyond
@@ -363,31 +296,18 @@ To infinity and beyond
 To infinity and beyond
 I hate the kill command
 sylvain@ubuntu$ 
-
+```
 Terminal #1
-
+```commandline
 sylvain@ubuntu$ sudo pkill -f 100-process_and_pid_file
 sylvain@ubuntu$ 
+```
 
 Starting 100-process_and_pid_file in the terminal #0 and then killing it in the terminal #1.
 
-Repo:
+### 10. Manage my process
 
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 100-process_and_pid_file
-
-10. Manage my process
-#advanced
-
-Read:
-
-    &
-    init.d
-    Daemon
-    Positional parameters
-
-man: sudo
+man: `sudo`
 
 Programs that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restart and stop. The most popular way of doing so on Unix system is to use the init scripts.
 
@@ -417,7 +337,7 @@ Requirements:
     Displays Usage: manage_my_process {start|stop|restart} if any other argument or no argument is passed
 
 Note that this init script is far from being perfect (but good enough for the sake of manipulating process and PID file), for example we do not handle the case where we check if a process is already running when doing ./101-manage_my_process start, in our case it will simply create a new process instead of saying that it is already started.
-
+```commandline
 sylvain@ubuntu$ sudo ./101-manage_my_process
 Usage: manage_my_process {start|stop|restart}
 sylvain@ubuntu$ sudo ./101-manage_my_process start
@@ -448,15 +368,9 @@ I am alive!
 I am alive!
 ^C
 sylvain@ubuntu$ 
+```
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 101-manage_my_process, manage_my_process
-
-11. Zombie
-#advanced
+### 11. Zombie
 
 Read what a zombie process is.
 
@@ -467,7 +381,7 @@ Requirements:
     For every zombie process created, it displays Zombie process created, PID: ZOMBIE_PID
     Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
     When your code is done creating the parent process and the zombies, use the function bellow
-
+```commandline
 int infinite_while(void)
 {
     while (1)
@@ -476,11 +390,11 @@ int infinite_while(void)
     }
     return (0);
 }
-
+```
 Example:
 
 Terminal #0
-
+```commandline
 sylvain@ubuntu$ gcc 102-zombie.c -o zombie
 sylvain@ubuntu$ ./zombie 
 Zombie process created, PID: 13527
@@ -490,9 +404,9 @@ Zombie process created, PID: 13530
 Zombie process created, PID: 13531
 ^C
 sylvain@ubuntu$
-
+```
 Terminal #1
-
+```commandline
 sylvain@ubuntu$ ps aux | grep -e 'Z+.*<defunct>'
 sylvain  13527  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
 sylvain  13528  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
@@ -501,17 +415,10 @@ sylvain  13530  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defun
 sylvain  13531  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
 sylvain  13533  0.0  0.1  10460   964 pts/2    S+   01:19   0:00 grep --color=auto -e Z+.*<defunct>
 sylvain@ubuntu$ 
-
+```
 In Terminal #0, I start by compiling 102-zombie.c and executing zombie which creates 5 zombie processes. In Terminal #1, I display the list of processes and look for lines containing Z+.*<defunct> which catches zombie process.
 
-Repo:
-
-    GitHub repository: holberton-system_engineering-devops
-    Directory: 0x05-processes_and_signals
-    File: 102-zombie.c
-
-12. Screencast
-#advanced
+### 12. Screencast
 
 Now that you have mastered signals, how about sharing your knowledge?
 
