@@ -27,3 +27,9 @@ Repo:
 ### 2. Reach the perfect cube, 27
 
 Complete the 9 next tasks, getting to 27 total.
+
+Repo:
+
+    GitHub repository: holberton-system_engineering-devops
+    Directory: command_line_for_the_win
+    File: 2-last-9-tasks.jpg,2-last-9-tasks.png
