@@ -1,5 +1,7 @@
 # 0x06. Regular expression
-
+<p align="center">
+   <img width="50%" height="400" src="https://www.fondamentaux.org/wp-content/uploads/2021/10/regex.jpeg">
+</p>
 ## Background Context
 
 For this project, you have to build your regular expression using Oniguruma, a regular expression library that which is used by Ruby by default. Note that other regular expression libraries sometimes have different properties.
