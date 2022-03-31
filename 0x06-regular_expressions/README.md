@@ -22,7 +22,7 @@ sylvain@ubuntu$ ./example.rb 127.0.0.a
 
 ## Tasks (mandatory)
 ### 0. Simply matching School
-![image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/ec65557f0da1fbfbff6659413885e4d4822f5b1d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220224T161920Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=858769f1bdbf33ed50f317c1fb14a838d42ca9fb13f912b1c12b001e8f1e4226)
+![img.png](img.png)
 
 Requirements:
 
@@ -42,14 +42,15 @@ $
 ```
 
 ### 1. Repetition Token #0
-![image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/e7db3c377d46453588fc84f3a975661d142fee91.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220224T161920Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9f13293493bc760830b6d3c6bd2f3b2cf94daa97311dad7315497abe54f36901)
+![img_1.png](img_1.png)
+
 Requirements:
 
     Find the regular expression that will match the above cases
     Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ### 2. Repetition Token #1
-![image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/c59ff11db195d5cf17d1790a5141ae2f234786d2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220224T161920Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7eb897dcbdc56d06c7257e419ebc71557d139cd1ed0c710a73f6fdf163f206d8)
+![img_2.png](img_2.png)
 
 Requirements:
 
@@ -57,14 +58,16 @@ Requirements:
     Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ### 3.Repetition Token #2
-![image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/3b6bf4aeca6a0c2de584e7f5d68d11eef57ce205.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220224T161920Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=92a7ce9c54c071bb4051682c9a0c55feb259d1cd70c9a747ca2956453f7757f5)
+![img_3.png](img_3.png)
+
 Requirements:
 
     Find the regular expression that will match the above cases
     Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ### 4. Repetition Token #3
-![image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/f8dbcb9cf5ae569a8645027dc46e81cb372ce28e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220224T161920Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=bb5addedaa9424092a586c2266d97cd9a3a7395552b9d9dd6f35cf0812b2b231)
+![img_4.png](img_4.png)
+
 Requirements:
 
     Find the regular expression that will match the above cases
