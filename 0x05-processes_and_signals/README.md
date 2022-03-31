@@ -1,5 +1,7 @@
 # 0x05. Processes and signals
 
+The link of my video: https://youtu.be/ATDVvY1B4rg
+
 ## Learning Objectives
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
