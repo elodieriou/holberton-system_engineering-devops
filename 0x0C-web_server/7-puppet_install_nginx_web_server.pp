@@ -1,22 +1,20 @@
 # Install Nginx web server (w/ Puppet)
-package { 'nginx':
-  ensure => installed,
+exec { 'install':
+  provider => shell,
+  command  => 'sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y install nginx',
 }
 
-file { '/var/www/html/index.nginx-debian.html':
-  ensure  => 'present',
-  path    => '/var/www/html',
-  content => 'Hello World',
+exec { 'echo Hello World':
+  provider => shell,
+  command  => 'echo "Holberton School" > /var/www/html/index.nginx-debian.html',
 }
 
-file_line { 'redirect_me':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'server_name _;',
-  line   => 'location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent; }',
+exec { 'redirect_me':
+  provider => shell,
+  command  => 'sed -i "/server_name _;/a location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent; }" /etc/nginx/sites-available/default',
 }
 
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+exec { 'service nginx restart':
+  provider => shell,
+  command  => 'sudo service nginx restart',
 }
