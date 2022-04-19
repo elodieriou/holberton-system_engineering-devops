@@ -6,8 +6,9 @@ package { 'nginx':
 }
 
 file { 'hello world':
-  content => 'Hello World',
+  ensure  => 'file',
   path    => 'var/www/html/index.nginx-debian.html',
+  content => 'Hello World',
   }
 
 file_line { 'redirection 301 moved permanently':
@@ -17,7 +18,7 @@ file_line { 'redirection 301 moved permanently':
   line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
   }
 
-service { 'restart nginx':
+service { 'nginx':
   ensure  => running,
   require => Package['nginx'],
   }
