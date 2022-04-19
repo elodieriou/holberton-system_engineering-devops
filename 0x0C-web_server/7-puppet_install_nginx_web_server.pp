@@ -1,14 +1,15 @@
+# Install Nginx web server (w/ Puppet)
 package { 'nginx':
   ensure => installed,
 }
 
-file { 'Hello World':
+file { '/var/www/html/index.nginx-debian.html':
   ensure  => 'present',
   path    => '/var/www/html',
   content => 'Hello World',
 }
 
-file_line { 'redirection 301 moved permanently':
+file_line { 'redirect_me':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'server_name _;',
