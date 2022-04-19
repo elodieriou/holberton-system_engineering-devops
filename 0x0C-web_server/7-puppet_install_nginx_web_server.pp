@@ -19,5 +19,5 @@ file_line { 'redirection 301 moved permanently':
 
 service { 'restart nginx':
   ensure  => running,
-  restart => '/usr/sbin/nginx restart',
+  require => Package['nginx'],
   }
