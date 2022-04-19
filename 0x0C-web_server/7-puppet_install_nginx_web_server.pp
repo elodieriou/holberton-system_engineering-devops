@@ -1,15 +1,9 @@
 # Install Nginx web server (w/ Puppet)
 include stdlib
 
-exec { 'update':
-  command => 'sudo apt-get update',
-  path    => '/usr/bin',
-  }
-
-exec { 'install nginx':
-  command => 'sudo apt-get -y install nginx',
-  path => '/usr/bin',
-  }
+package { 'nginx':
+  ensure => installed,
+}
 
 file { 'hello world':
   content => 'Hello World',
