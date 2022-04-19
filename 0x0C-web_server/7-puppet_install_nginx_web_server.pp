@@ -7,6 +7,7 @@ package { 'nginx':
 
 file { 'hello world':
   content => 'Hello World',
+  path    => 'var/www/html/index.nginx-debian.html',
   }
 
 file_line { 'redirection 301 moved permanently':
@@ -18,5 +19,5 @@ file_line { 'redirection 301 moved permanently':
 
 service { 'restart nginx':
   ensure  => running,
-  restart => 'usr/sbin/nginx restart',
+  restart => '/usr/sbin/nginx restart',
   }
