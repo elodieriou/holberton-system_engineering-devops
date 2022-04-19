@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Configure NginX server so that /redirect_me is redirecting to another page
-apt-get update
-apt-get -y upgrade
-apt-get -y install nginx
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Hello World" > /var/www/html/index.nginx-debian.html
+sed -i '/server_name _;/a location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent; }' /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
-sed -i '/server_name _;/a location /redirect_me {\nrewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n }' /etc/nginx/sites-available/default
-sed -i '/server_name_;/a error_page 404 /error404.html; \nlocation = /custom_404.html {\n root /usr/share/nginx/html;\ninternal;\n }' /etc/nginx/sites-enabled/default
+sed -i '/server_name _;/a error_page 404 /404.html;\nlocation = /404.html {\nroot /var/www/html;\ninternal;\n}' /etc/nginx/sites-available/default
 service nginx restart
