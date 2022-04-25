@@ -4,7 +4,7 @@
 #+ It configures a brand new Ubuntu machine to the requirements asked in this task
 
 exec { 'update':
-  command => 'apt-get update',
+  command => 'sudo apt-get update',
   path    => '/usr/bin',
 }
 
