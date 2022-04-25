@@ -16,7 +16,7 @@ exec { 'upgrade':
 package { 'nginx':
   ensure  => present,
   name    => 'nginx',
-  require => Exec['upgrade'],
+  require => Exec['update'],
 }
 
 file_line { 'Add header':
