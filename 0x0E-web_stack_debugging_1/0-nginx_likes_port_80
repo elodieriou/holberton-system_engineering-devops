@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Create soft link between sites-available and sites-enabled
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
