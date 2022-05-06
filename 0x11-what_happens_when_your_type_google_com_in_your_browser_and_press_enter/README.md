@@ -55,13 +55,6 @@ The diagram should show:
 
 Gliffy is free and what I personally use, but feel free to use what fits you best.
 
-Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
-Add URLs here:
-
-```commandline
-
-```
-
 ### 2. Contribute!
 
 Folks on the Internet have been trying to put together a comprehensive answer to the question. Help them by submitting a pull request. Paste the link in your answer file.
@@ -72,5 +65,3 @@ Requirements:
 
     The pull request must bring meaningful value (not a typo correction or style improvement)
     Share the pull request URL in your answer file and in the field below
-
-Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
