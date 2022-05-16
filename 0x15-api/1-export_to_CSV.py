@@ -3,9 +3,9 @@
 and returns information about his/her TODO list progress"""
 
 if __name__ == "__main__":
+    from sys import argv
     import csv
     import requests
-    from sys import argv
 
     # formatting url
     url = "https://jsonplaceholder.typicode.com"
