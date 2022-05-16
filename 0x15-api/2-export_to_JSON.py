@@ -9,8 +9,8 @@ if __name__ == "__main__":
 
     url = "https://jsonplaceholder.typicode.com"
     user_id = argv[1]
-    user_url = "{url}/users/{id}".format(url=url, id=user_id)
-    todos_url = "{user_url}/todos".format(user_url=user_url)
+    user_url = "{}/users/{}".format(url, user_id)
+    todos_url = "{}/todos".format(user_url)
 
     req_user = requests.get(user_url).json()
     req_todos = requests.get(todos_url).json()
