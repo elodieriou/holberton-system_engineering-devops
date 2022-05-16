@@ -18,7 +18,7 @@ if __name__ == "__main__":
     user_name = req_user.get('username')
 
     filename = "{}.csv".format(user_id)
-    with open(filename, 'w', encoding='UTF8') as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         csv_writer = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
 
         for value in req_todos:
