@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # get information thanks the request
     user_name = req_user.get('username')
 
-    # export to csv format
+    # formatting to json
     filename = "{}.json".format(user_id)
 
     list_element = []
@@ -33,5 +33,6 @@ if __name__ == "__main__":
     json_dictionary = {user_id: list_element}
     to_json = json.dumps(json_dictionary)
 
+    # write on the file
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(to_json)
