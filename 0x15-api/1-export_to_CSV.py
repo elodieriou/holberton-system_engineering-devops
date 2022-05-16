@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a script that using an REST API, for a given employee ID,
+"""This module defines a script that using an REST API, for a given employee ID
 and returns information about his/her TODO list progress"""
 
 if __name__ == "__main__":
