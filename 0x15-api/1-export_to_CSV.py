@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-"""This module defines a script that using an REST API, for a given employee ID
-and returns information about his/her"""
+"""
+Python script that exports data using the CSV format.
+"""
+
+import csv
+import requests
+from sys import argv
 
 if __name__ == "__main__":
-    import csv
-    import requests
-    from sys import argv
+    url = "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
+    api_url = requests.get(url)
+    username = api_url.json().get("username")
+    uid = api_url.json().get("id")
 
-    url = "https://jsonplaceholder.typicode.com"
-    user_id = argv[1]
-    user_url = "{}/users/{}".format(url, user_id)
-    todos_url = "{}/todos".format(user_url)
+    api_url_todo = requests.get("{}/todos".format(url))
 
-    req_user = requests.get(user_url).json()
-    req_todos = requests.get(todos_url).json()
+    filename = "{}.csv".format(argv[1])
 
-    user_name = req_user.get('username')
+    with open(filename, "w", encoding='UTF8') as f:
+        writer = csv.writer(f, quotechar="'")
 
-    filename = "{}.csv".format(user_id)
-    with open(filename, 'w', encoding='UTF8') as f:
-        csv_writer = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
-
-        for value in req_todos:
-            data = [user_id, user_name, value.get('completed'),
-                    value.get('title')]
-            csv_writer.writerow(data)
+        for value in api_url_todo.json():
+            row = ['\"{}\"'.format(uid), '\"{}\"'.format(username)]
+            row.append('\"{}\"'.format(value.get("completed")))
+            row.append('\"{}\"'.format(value.get("title")))
+            writer.writerow(row)
