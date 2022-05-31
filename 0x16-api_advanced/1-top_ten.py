@@ -10,7 +10,10 @@ def top_ten(subreddit):
     headers = {'User-Agent': 'elodieriou3685'}
     params = {'limit': 10}
 
-    req_reddit = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    req_reddit = requests.get(url,
+                              headers=headers,
+                              params=params,
+                              allow_redirects=False)
     if req_reddit.status_code > 300:
         print("None")
         return
