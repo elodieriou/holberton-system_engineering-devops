@@ -12,7 +12,7 @@ server {
 
 	# Serve the page airbnb-onepage with gunicorn
 	location /airbnb-onepage/ {
-		 proxy_pass http://0.0.0.0:5000;
+		 proxy_pass http://0.0.0.0:5000/aribnb-onepage;
 	}
 
 	add_header X-Served-By ${HOSTNAME};
@@ -25,11 +25,5 @@ server {
 
 	location /redirect_me {
 		 rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-	}
-
-	location / {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
 	}
 }
